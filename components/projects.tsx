@@ -4,8 +4,9 @@ const projects = [
   {
     title: "SkollCoaching",
     href: "#",
-    technologies: ["React", "GatsbyJS", "Tailwind CSS"],
-    description: "Marketing page for a personal trainer.",
+    technologies: ["React", "GatsbyJS", "Tailwind CSS", "PWA"],
+    description:
+      "Marketing page for a personal trainer. Progressive Web App scoring 99 in the Lighthouse Performance Audit",
     imageUrl: "/skollcoaching.png",
   },
 ];
@@ -49,31 +50,27 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  <a href={project.href} className="block mt-2">
+                  <div className="block mt-2">
                     <p className="text-xl font-semibold text-gray-900">
                       {project.title}
                     </p>
                     <p className="mt-3 text-base text-gray-500">
                       {project.description}
                     </p>
-                  </a>
+                  </div>
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
-                    <a>
-                      <span className="sr-only">{}</span>
-                      <img className="h-10 w-10 rounded-full" src="{}" alt="" />
-                    </a>
+                    <p />
                   </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
-                      <a className="hover:underline">{}</a>
-                    </p>
-                    <div className="flex space-x-1 text-sm text-gray-500">
-                      <time>{}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{} read</span>
-                    </div>
+                  <div className="ml-auto">
+                    <a
+                      href="https://skollcoaching.com"
+                      rel="noreferrer"
+                      target="_blank"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Visit Site
+                    </a>
                   </div>
                 </div>
               </div>
