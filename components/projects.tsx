@@ -3,10 +3,18 @@ import Image from "next/image";
 const projects = [
   {
     title: "SkollCoaching",
-    href: "#",
+    href: "https://skollcoaching.com",
     technologies: ["React", "GatsbyJS", "Tailwind CSS", "PWA"],
     description:
       "Marketing page for a personal trainer. Progressive Web App scoring 99 in the Lighthouse Performance Audit",
+    imageUrl: "/skollcoaching.png",
+  },
+  {
+    title: "Portfolio",
+    href: "https://alexandermay.dev",
+    technologies: ["React", "Next.js", "Tailwind CSS"],
+    description:
+      "The page you're currently looking at. With support for multiple languages, dark/light mode and fast load times",
     imageUrl: "/skollcoaching.png",
   },
 ];
@@ -30,7 +38,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+              className="flex flex-col rounded-lg shadow-lg overflow-hidden transition duration-100 transform hover:scale-105">
               <div className="flex-shrink-0 relative w-full h-48">
                 <Image
                   layout="fill"
@@ -65,7 +73,7 @@ export default function Projects() {
                   </div>
                   <div className="ml-auto">
                     <a
-                      href="https://skollcoaching.com"
+                      href={project.href}
                       rel="noreferrer"
                       target="_blank"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
