@@ -1,16 +1,28 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from "@heroicons/react/outline";
 import { useTheme } from "next-themes";
-
-const navigation = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-];
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
+import classNames from "classnames";
 
 export default function Hero() {
   const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const { t } = useTranslation("common");
+
+  const { locale } = useRouter();
+  console.log(locale);
+  const navigation = [
+    { name: t("about"), href: "#about" },
+    { name: t("skills"), href: "#skills" },
+    { name: t("projects"), href: "#projects" },
+  ];
+
   return (
     <div className="relative bg-gray-50 dark:bg-gray-800 overflow-hidden">
       <div className="relative pt-6 pb-16 sm:pb-24">
@@ -23,31 +35,13 @@ export default function Hero() {
                   aria-label="Global">
                   <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:right-0">
                     <div className="flex items-center justify-end w-full md:w-auto">
-                      <button
-                        className="text-gray-800 dark:text-white hidden md:block"
-                        onClick={() =>
-                          setTheme(theme === "dark" ? "light" : "dark")
-                        }>
-                        {theme === "dark" ? (
-                          <MoonIcon className="h-6 w-6" />
-                        ) : (
-                          <SunIcon className="h-6 w-6" />
-                        )}
-                      </button>
-                      <div className="-mr-2 flex items-center md:hidden">
-                        <button
-                          className="text-gray-800 dark:text-white mr-4"
-                          onClick={() =>
-                            setTheme(theme === "dark" ? "light" : "dark")
-                          }>
-                          {theme === "dark" ? (
-                            <MoonIcon className="h-6 w-6" />
-                          ) : (
-                            <SunIcon className="h-6 w-6" />
-                          )}
-                        </button>
-                        <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                          <span className="sr-only">Open main menu</span>
+                      <LanguageChanger currentLocale={locale} />
+                      {mounted && (
+                        <ThemeChanger theme={theme} setTheme={setTheme} />
+                      )}
+                      <div className="-mr-2 flex items-center md:hidden ml-2">
+                        <Popover.Button className="bg-gray-50 dark:bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                          <span className="sr-only">{t("open_main_menu")}</span>
                           <MenuIcon className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
                       </div>
@@ -83,7 +77,7 @@ export default function Hero() {
                     <div className="px-5 pt-4 flex items-center justify-end">
                       <div className="-mr-2">
                         <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                          <span className="sr-only">Close menu</span>
+                          <span className="sr-only">{t("close_menu")}</span>
                           <XIcon className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
                       </div>
@@ -108,18 +102,61 @@ export default function Hero() {
         <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
           <div className="text-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-              <span className="block xl:inline">Hi, I&apos;m</span>{" "}
+              <span className="block xl:inline">{t("hi")}</span>{" "}
               <span className="block text-indigo-600 xl:inline">
                 Alexander May
               </span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-8 md:text-xl md:max-w-3xl">
-              I&apos;m an experienced frontend developer here to help you
-              conceptualize, develop and maintain your web application.
+              {t("purpose")}
             </p>
           </div>
         </main>
       </div>
     </div>
   );
+
+  function LanguageChanger({ currentLocale }) {
+    return (
+      <div className="dark:text-white">
+        <Link href="/" locale="de">
+          <a
+            className={classNames(
+              "border-gray-800 dark:border-white pb-1 hover:border-b",
+              {
+                "border-b": currentLocale === "de",
+              }
+            )}>
+            DE
+          </a>
+        </Link>{" "}
+        |{" "}
+        <Link href="/" locale="en">
+          <a
+            className={classNames(
+              "border-gray-800 dark:border-white pb-1 hover:border-b",
+              {
+                "border-b": currentLocale === "en",
+              }
+            )}>
+            EN
+          </a>
+        </Link>
+      </div>
+    );
+  }
+
+  function ThemeChanger({ theme, setTheme }) {
+    return (
+      <button
+        className="text-gray-800 dark:text-white ml-4"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        {theme === "dark" ? (
+          <MoonIcon className="h-6 w-6" />
+        ) : (
+          <SunIcon className="h-6 w-6" />
+        )}
+      </button>
+    );
+  }
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const technologies = [
   {
@@ -64,13 +65,15 @@ const technologies = [
 ];
 
 export default function Technologies() {
+  const { t } = useTranslation("common");
+
   return (
     <div className="relative bg-white dark:bg-gray-800 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <h2
           id="skills"
           className="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl">
-          Skills & Technologies
+          {t("skills_header")}
         </h2>
         <div className="mx-auto py-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">

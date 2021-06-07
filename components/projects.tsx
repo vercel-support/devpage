@@ -1,25 +1,24 @@
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "SkollCoaching",
-    href: "https://skollcoaching.com",
-    technologies: ["React", "GatsbyJS", "Tailwind CSS", "PWA"],
-    description:
-      "Marketing page for a personal trainer. Progressive Web App scoring 99 in the Lighthouse Performance Audit",
-    imageUrl: "/skollcoaching.png",
-  },
-  {
-    title: "Portfolio",
-    href: "https://alexandermay.dev",
-    technologies: ["React", "Next.js", "Tailwind CSS"],
-    description:
-      "The page you're currently looking at. With support for multiple languages, dark/light mode and fast load times",
-    imageUrl: "/skollcoaching.png",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation("common");
+  const projects = [
+    {
+      title: "SkollCoaching",
+      href: "https://skollcoaching.com",
+      technologies: ["React", "GatsbyJS", "Tailwind CSS", "PWA"],
+      description: t("skollcoaching_desc"),
+      imageUrl: "/skollcoaching.png",
+    },
+    {
+      title: "Portfolio",
+      href: "https://alexandermay.dev",
+      technologies: ["React", "Next.js", "Tailwind CSS"],
+      description: t("portfolio_desc"),
+      imageUrl: "/skollcoaching.png",
+    },
+  ];
   return (
     <div className="relative bg-gray-50 dark:bg-gray-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
       <div className="absolute inset-0">
@@ -30,10 +29,10 @@ export default function Projects() {
           <h2
             id="projects"
             className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-            Projects
+            {t("projects")}
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-300 sm:mt-4">
-            Some examples of what I&apos;ve worked on so far
+            {t("examples")}
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
@@ -79,7 +78,7 @@ export default function Projects() {
                       rel="noreferrer"
                       target="_blank"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                      Visit Site
+                      {t("visit")}
                     </a>
                   </div>
                 </div>
