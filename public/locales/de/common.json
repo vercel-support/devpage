@@ -1,7 +1,11 @@
 {
-	"about": "Über mich",
+	"about": "Über mich ",
 	"all_rights_reserved": "Alle Rechte vorbehalten.",
+	"any": "Jede meiner Skills",
 	"close_menu": "Menü schließen",
+	"cta_subheader": "Lassen Sie uns darüber reden, wie ich Ihnen helfen kann",
+	"cv": "Lebenslauf",
+	"email": "Email",
 	"examples": "Einige Beispiel woran ich bisher gearbeitet habe",
 	"expectations": "Was Sie von Ihrem Projekt erwarten können",
 	"fast": "Schnell",
@@ -9,9 +13,10 @@
 	"focus": "Mein Fokus ist die Entwicklung von hochqualitativer, leicht wartbarer Software.",
 	"hi": "Hey, ich bin",
 	"intuitive": "Intuitiv",
-	"intuitive_desc": "Eine Applikation die intuitiv zu bedienen ist sorgt für hohe Zufriedenheit bei ihren Nutzern und sorgt somit für niedrigere Supportkosten.",
+	"intuitive_desc": "Eine Applikation, die intuitiv zu bedienen ist, sorgt für hohe Zufriedenheit bei ihren Nutzern und sorgt somit für niedrigere Supportkosten.",
 	"maintainable": "Wartbar",
 	"maintainable_desc": "Entwicklung nach \"Best Practices\" und solide Tests sorgen für wenige Fehler und damit niedrigere Wartungskosten.",
+	"message_me": "Schreiben Sie mir",
 	"open_main_menu": "Menü öffnen",
 	"portfolio_desc": "Die Seite die Sie derzeit ansehen. Unterstützt mehrere Sprachen, Dark/Light Mode und schnelle Ladezeiten.",
 	"projects": "Projekte",
@@ -20,5 +25,8 @@
 	"skills": "Skills",
 	"skills_header": "Skills & Technologien",
 	"skollcoaching_desc": "Marketing Seite für einen Personal Trainer. Progressie Web App mit einem 99 Score im Lighthouse Performance Audit.",
-	"visit": "Webseite besuchen"
+	"visit": "Webseite besuchen",
+	"work_with_me": "Habe ich ihr Interesse geweckt?",
+	"your_next_project": "Ihr nächstes Projekt",
+	"your_next_project_desc": "bla"
 }

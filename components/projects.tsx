@@ -16,7 +16,15 @@ export default function Projects() {
       href: "https://alexandermay.dev",
       technologies: ["React", "Next.js", "Tailwind CSS"],
       description: t("portfolio_desc"),
-      imageUrl: "/skollcoaching.png",
+      imageUrl: "/portfolio.png",
+    },
+    {
+      title: t("your_next_project"),
+      href: "mailto:alexander.may@hey.com",
+      technologies: [t("any")],
+      description: t("your_next_project_desc"),
+      imageUrl: "/pitching.png",
+      buttonText: t("message_me"),
     },
   ];
   return (
@@ -39,7 +47,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="flex flex-col rounded-lg shadow-lg overflow-hidden transition duration-100 transform hover:scale-105">
+              className="flex flex-col rounded-lg shadow-lg overflow-hidden transition duration-100 transform hover:scale-105 dark:border dark:border-white">
               <div className="flex-shrink-0 relative w-full h-48">
                 <Image
                   layout="fill"
@@ -78,7 +86,7 @@ export default function Projects() {
                       rel="noreferrer"
                       target="_blank"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                      {t("visit")}
+                      {project.buttonText || t("visit")}
                     </a>
                   </div>
                 </div>

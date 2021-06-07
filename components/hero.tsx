@@ -1,6 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, MoonIcon, SunIcon, XIcon } from "@heroicons/react/outline";
+import {
+  AtSymbolIcon,
+  MenuIcon,
+  MoonIcon,
+  SunIcon,
+  XIcon,
+} from "@heroicons/react/outline";
 import { useTheme } from "next-themes";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
@@ -24,14 +30,14 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative bg-gray-50 dark:bg-gray-800 overflow-hidden">
-      <div className="relative pt-6 pb-16 sm:pb-24">
+    <div className="relative bg-gray-50 dark:bg-gray-800 overflow-hidden h-screen">
+      <div className="relative pt-6 pb-16 sm:pb-24 h-full">
         <Popover>
           {({ open }) => (
             <>
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <nav
-                  className="relative flex items-center justify-between sm:h-10 md:justify-center"
+                  className="relative flex items-center justify-between sm:h-10 md:justify-center "
                   aria-label="Global">
                   <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:right-0">
                     <div className="flex items-center justify-end w-full md:w-auto">
@@ -99,11 +105,11 @@ export default function Hero() {
           )}
         </Popover>
 
-        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+        <main className="mx-auto max-w-7xl px-4 flex justify-center items-center h-full">
           <div className="text-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
               <span className="block xl:inline">{t("hi")}</span>{" "}
-              <span className="block text-indigo-600 xl:inline">
+              <span className="block text-indigo-600 dark:text-indigo-500 xl:inline">
                 Alexander May
               </span>
             </h1>
@@ -118,11 +124,11 @@ export default function Hero() {
 
   function LanguageChanger({ currentLocale }) {
     return (
-      <div className="dark:text-white">
+      <div className="text-gray-500 dark:text-white">
         <Link href="/" locale="de">
           <a
             className={classNames(
-              "border-gray-800 dark:border-white pb-1 hover:border-b",
+              "border-gray-500 dark:border-white pb-1 hover:border-b hover:border-gray-800 dark:hover:border-gray-300 hover:text-gray-800 dark:hover:text-gray-300",
               {
                 "border-b": currentLocale === "de",
               }
@@ -134,7 +140,7 @@ export default function Hero() {
         <Link href="/" locale="en">
           <a
             className={classNames(
-              "border-gray-800 dark:border-white pb-1 hover:border-b",
+              "border-gray-500 dark:border-white pb-1 hover:border-b hover:border-gray-800 dark:hover:border-gray-300 hover:text-gray-800 dark:hover:text-gray-300",
               {
                 "border-b": currentLocale === "en",
               }
@@ -149,7 +155,8 @@ export default function Hero() {
   function ThemeChanger({ theme, setTheme }) {
     return (
       <button
-        className="text-gray-800 dark:text-white ml-4"
+        aria-label={theme === "dark" ? "Toggle light mode" : "Toggle dark mode"}
+        className="text-gray-500 hover:text-gray-800 dark:text-white dark:hover:text-gray-300 ml-4"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
         {theme === "dark" ? (
           <MoonIcon className="h-6 w-6" />

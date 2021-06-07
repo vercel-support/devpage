@@ -6,6 +6,7 @@ import Hero from "../components/hero";
 import Projects from "../components/projects";
 import Technologies from "../components/technologies";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import CTA from "../components/cta";
 
 export async function getServerSideProps({ locale }) {
   return {
@@ -30,6 +31,7 @@ export default function Home() {
       <Features />
       <Technologies />
       <Projects />
+      <CTA />
       <Footer />
     </>
   );

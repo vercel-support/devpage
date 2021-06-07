@@ -1,7 +1,11 @@
 {
 	"about": "About",
 	"all_rights_reserved": "All rights reserved.",
+	"any": "Any of my skills",
 	"close_menu": "Close menu",
+	"cta_subheader": "Let's talk about how I can help you",
+	"cv": "View CV",
+	"email": "Email me",
 	"examples": "Some examples of what I've worked on so far",
 	"expectations": "What you can expect from your project",
 	"fast": "Fast",
@@ -12,6 +16,7 @@
 	"intuitive_desc": "Intuitive and easy to use applications will increase user satisfaction and reduce support effort.",
 	"maintainable": "Maintainable",
 	"maintainable_desc": "Development using best practices and solid testing means less bugs and lower maintenance costs for you.",
+	"message_me": "Contact me",
 	"open_main_menu": "Open main menu",
 	"portfolio_desc": "The page you're currently looking at. With support for multiple languages, dark/light mode and fast load times.",
 	"projects": "Projects",
@@ -20,5 +25,8 @@
 	"skills": "Skills",
 	"skills_header": "Skills & Technologies",
 	"skollcoaching_desc": "Marketing page for a personal trainer. Progressive Web App scoring 99 in the Lighthouse Performance Audit.",
-	"visit": "Visit site"
+	"visit": "Visit site",
+	"work_with_me": "Want to work with me?",
+	"your_next_project": "Your next project",
+	"your_next_project_desc": "bla"
 }
