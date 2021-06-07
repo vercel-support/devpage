@@ -30,14 +30,14 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="relative bg-white dark:bg-gray-700 py-16 sm:py-24 lg:py-32">
+    <div className="relative bg-white dark:bg-gray-800 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <h2
           id="about"
-          className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+          className="mt-2 text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl">
           What you can expect from your project
         </h2>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500 dark:text-gray-300">
           My focus is developing high-quality, easily maintainable applications.
         </p>
         <div className="mt-12">
