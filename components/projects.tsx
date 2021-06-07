@@ -77,9 +77,6 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    <p />
-                  </div>
                   <div className="ml-auto">
                     <a
                       href={project.href}
